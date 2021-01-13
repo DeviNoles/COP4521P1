@@ -10,6 +10,7 @@ def driver():
     buildPyramid(int(rowCount)+1)
     printPyramid()
 def buildPyramid(rc):
+    global pyramidArray
     for i in range(0, rc):
         newArray = []
 
@@ -24,7 +25,8 @@ def buildPyramid(rc):
                 elif(i-1==j):
                     newArray.append(1)
                 else:
-                    newArray.append(2)
+                    newArray.append(pyramidArray[i-1][j-1]+pyramidArray[i-1][j])
+                    #newArray.append(2)
         pyramidArray.append(newArray)
 def printPyramid():
     global pyramidArray
@@ -32,6 +34,6 @@ def printPyramid():
     global rowCount
     for i in range(1, int(rowCount)+1):
         for j in range(len(pyramidArray[i])):
-            print(pyramidArray[i][j], end='')
+            print(pyramidArray[i][j]," ", end='')
         print("")
 driver()
