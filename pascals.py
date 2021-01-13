@@ -19,7 +19,12 @@ def buildPyramid(rc):
             elif(i==2):
                 newArray.append(1)
             else:
-                newArray.append(2)
+                if(j==0):
+                    newArray.append(1)
+                elif(i-1==j):
+                    newArray.append(1)
+                else:
+                    newArray.append(2)
         pyramidArray.append(newArray)
 def printPyramid():
     global pyramidArray
